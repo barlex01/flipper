@@ -83,6 +83,7 @@ li {
         align-items: center;
         justify-content: center;
         border-radius: 10px;
+        flex-direction: column;
     }
 
     &__title {
@@ -102,7 +103,7 @@ li {
 
 .btn,
 .btn-two {
-    margin-top: 20px;
+    
     padding: 15px 25px;
     background-color: transparent;
     outline: none;
@@ -118,7 +119,7 @@ li {
 
 }
 
-.btn:hover {
+.btn-two:hover,.btn:hover {
     color: #ffffff;
     background-color: black;
 
