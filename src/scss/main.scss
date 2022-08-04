@@ -9,6 +9,13 @@
 
 }
 
+body {
+    height: 100vh;
+    // transition: 0.4s all ease-in-out;
+    
+   
+}
+
 a {
     text-decoration: none;
 }
@@ -19,10 +26,11 @@ li {
 
 .header {
     min-height: 100px;
-    height: 100%;
+   
 
     box-shadow: 0px 8px 8px 5px #3a3939c5;
-    background-color: #ffffff;
+    background: #ffffff;
+    
 
 }
 
@@ -32,6 +40,7 @@ li {
     height: 100px;
     display: flex;
     align-items: center;
+
     justify-content: space-between;
 
     &__list {
@@ -78,17 +87,17 @@ li {
     margin-top: 100px;
 
     &__inner {
-        height: 500px;
+        height: 800px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
         border-radius: 10px;
         flex-direction: column;
     }
 
     &__title {
-        font-size: 40px;
-        background-color: rgb(0, 0, 0);
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0.791);
         padding: 20px 35px;
         border-radius: 10px;
         color: rgb(255, 255, 255);
@@ -123,8 +132,4 @@ li {
     color: #ffffff;
     background-color: black;
 
-}
-
-body {
-    transition: 0.4s background-color ease-in-out;
 }
