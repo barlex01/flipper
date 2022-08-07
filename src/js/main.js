@@ -56,6 +56,9 @@ function createElementForRenderGradient(clas){
                             <div class="rigth">
                                 <a href="/" id='linear' class="btn btn_linear">Linear-gradient</a>
                                 <a href="/" id ='radial'class="btn btn_radial">Radial-gradient</a>
+                                <div id='renderTwo'>
+                                  <a href="/" id='circleAt' class='btn'>Circle at 100%</a>
+                                </div>
                             </div>
                           </div>
                         `;
@@ -64,7 +67,7 @@ function createElementForRenderGradient(clas){
 
 simpleLink.addEventListener('click', simple)
 function simple(e) {
-  //  hexLink.removeEventListener('click', hex)
+ 
   e.preventDefault();
 
   render.innerHTML = '';
@@ -74,7 +77,7 @@ function simple(e) {
   const btn = document.getElementById('btn');
   const text = document.querySelector('.color');
 
-  // setListener(btn, 'click', getRandomRGB)
+
   btn.addEventListener('click', getRandomRGB)
   function getRandomRGB() {
 
@@ -101,8 +104,6 @@ function simple(e) {
 //   }
 // }
 
-
-
 hexLink.addEventListener('click', hex)
 function hex(e) {
   // simpleLink.removeEventListener('click', simple)
@@ -110,7 +111,6 @@ function hex(e) {
 
   render.innerHTML = '';
   document.body.style.background = `#ffffff`;
-  
 
   const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
 
@@ -121,8 +121,10 @@ function hex(e) {
   btnTwo.addEventListener('click', clickBtn)
 
   function clickBtn() {
+
     let hexColor = '#';
     const colorNew = document.querySelector('.colors');
+
     for (let i = 0; i < 6; i++) {
       hexColor += hex[getRandomNum()];
     }
@@ -135,9 +137,10 @@ function hex(e) {
   }
 }
 
-
 gradient.addEventListener('click', setGradient)
+
 function setGradient(e) {
+
   e.preventDefault();
   render.innerHTML = '';
   document.body.style.background = '#ffffff'
@@ -145,32 +148,35 @@ function setGradient(e) {
   createElementForRenderGradient('codeGradient');
 
   let code = document.querySelector('.codeGradient');
- 
-  
- 
-  
-  
-  
   let linearBtn = document.getElementById('linear')
   let radialBtn = document.getElementById('radial')
+  let circleAt = document.getElementById('circleAt')
   
-   
   linearBtn.addEventListener('click',setLinearGradient);
   radialBtn.addEventListener('click', setRadialGradient)
-  function setLinearGradient(e) {
+  circleAt.addEventListener('click', setCircleGradient)
+  function setCircleGradient(e){
     e.preventDefault();
     onGradient()
+    code.textContent = document.body.style.background = `radial-gradient(circle at ${getRandomPercent(100, 0)}%, ${setRandomRgb()} ${getRandomPercent(36, 0)}%, ${setRandomRgb()} ${getRandomPercent(70, 36)}%, ${setRandomRgb()} ${getRandomPercent(100, 70)}%)`;
+  }
+  function setLinearGradient(e) {
+
+    e.preventDefault();
+    onGradient()
+    
     code.textContent = document.body.style.background = `linear-gradient(${getRandomPercent(360,0)}deg, ${setRandomRgb()} ${getRandomPercent(36, 0)}%, ${setRandomRgb()} ${getRandomPercent(70, 36)}%, ${setRandomRgb()} ${getRandomPercent(100, 70)}%)`;
     
   }
   
   function setRadialGradient(e) {
+
     e.preventDefault()
     onGradient()
+
     code.textContent = document.body.style.background = `radial-gradient(circle, ${setRandomRgb()} ${getRandomPercent(36, 0)}%, ${setRandomRgb()} ${getRandomPercent(70, 36)}%, ${setRandomRgb()} ${getRandomPercent(100, 70)}%)`;
   }
   
-
 function onGradient() {
   document.body.style.transition = `all 0.4s ease -in -out`;
   document.body.style.background = `#ffffff`
