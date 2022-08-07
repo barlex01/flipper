@@ -43,6 +43,24 @@ function createElemDiv(color, cls, id) {
                     `;
   render.append(div);
 }
+function createElementForRenderGradient(clas){
+  let div = document.createElement('div');
+        div.innerHTML = `
+                          <div class="grid">
+                            <div class="left">
+                                
+                                <h3 class="flipper__title">Background: <span class="${clas}">white</span></h3>
+                            </div>
+                            <div class="center">
+                            </div>
+                            <div class="rigth">
+                                <a href="/" id='linear' class="btn btn_linear">Linear-gradient</a>
+                                <a href="/" id ='radial'class="btn btn_radial">Radial-gradient</a>
+                            </div>
+                          </div>
+                        `;
+      render.append(div);
+}
 
 simpleLink.addEventListener('click', simple)
 function simple(e) {
@@ -123,25 +141,13 @@ function setGradient(e) {
   e.preventDefault();
   render.innerHTML = '';
   document.body.style.background = '#ffffff'
-  let div = document.createElement('div')
- 
+  
+  createElementForRenderGradient('codeGradient');
+
+  let code = document.querySelector('.codeGradient');
  
   
-  div.innerHTML = `
-                      <div class="grid">
-                        <div class="left">
-                            
-                            <h3 class="flipper__title">Background: <span class="nameColor"></span></h3>
-                        </div>
-                        <div class="center">
-                        </div>
-                        <div class="rigth">
-                            <a href="/" id='linear' class="btn btn_linear">Linear-gradient</a>
-                            <a href="/" id ='radial'class="btn btn_radial">Radial-gradient</a>
-                        </div>
-                      </div>
-                    `;
-  render.append(div);
+ 
   
   
   
@@ -154,14 +160,14 @@ function setGradient(e) {
   function setLinearGradient(e) {
     e.preventDefault();
     onGradient()
-    document.body.style.background = `linear-gradient(${getRandomPercent(360,0)}deg, ${setRandomRgb()} ${getRandomPercent(36, 0)}%, ${setRandomRgb()} ${getRandomPercent(70, 36)}%, ${setRandomRgb()} ${getRandomPercent(100, 70)}%)`;
- 
+    code.textContent = document.body.style.background = `linear-gradient(${getRandomPercent(360,0)}deg, ${setRandomRgb()} ${getRandomPercent(36, 0)}%, ${setRandomRgb()} ${getRandomPercent(70, 36)}%, ${setRandomRgb()} ${getRandomPercent(100, 70)}%)`;
+    
   }
   
   function setRadialGradient(e) {
     e.preventDefault()
     onGradient()
-    document.body.style.background = `radial-gradient(circle, ${setRandomRgb()} ${getRandomPercent(36, 0)}%, ${setRandomRgb()} ${getRandomPercent(70, 36)}%, ${setRandomRgb()} ${getRandomPercent(100, 70)}%)`;
+    code.textContent = document.body.style.background = `radial-gradient(circle, ${setRandomRgb()} ${getRandomPercent(36, 0)}%, ${setRandomRgb()} ${getRandomPercent(70, 36)}%, ${setRandomRgb()} ${getRandomPercent(100, 70)}%)`;
   }
   
 
