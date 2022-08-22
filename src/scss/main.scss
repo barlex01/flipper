@@ -12,6 +12,7 @@
 body {
     min-height: 100vh;
     height: 100%;
+   
     
     
    
@@ -53,11 +54,11 @@ li {
     }
 
     &__item {
-        margin-left: 50px;
+        margin-left: 10px;
     }
 
     &__link {
-        font-size: 30px;
+        font-size: 20px;
         color: rgb(0, 0, 0);
         
         transition: 0.5s all ease-in-out;
@@ -163,4 +164,76 @@ li {
     margin-top: 50px;
     display: grid;
     grid-template-columns: 300px auto 300px;
+}
+.color{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+   
+    
+}
+.colors{
+         width: 100%;
+        height: 50px;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        &::-webkit-color-swatch{
+            border-radius: 10px;
+            border: none;
+        }
+}
+.directions{
+    display: flex;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 25px;
+    justify-content: center;
+    & button{
+        background-color: rgb(204, 204, 225);
+        border: none;
+        height: 45px;
+        width: 45px;
+        outline: none;
+        border-radius: 10%;
+        display: grid;
+        place-items: center;
+        font-size: 40px;
+        transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        cursor: pointer;
+        &.active{
+            background-color: rgb(1, 132, 255);
+            
+        }
+        &:hover{
+            background-color: rgb(7, 7, 7);
+            color: #0175fb;
+        }
+    }
+}
+.rotate{
+    transform: rotate(45deg);
+}
+.result{
+    width: 100%;
+    margin-top: 2rem;
+    display: block;
+}
+.code{
+    width: 100%;
+    height: 70px;
+    resize: none;
+    border: none;
+    outline: none;
+    background: rgba(0, 0, 0, 0.713);
+    border-radius: 10px;
+}
+.copy{
+    padding: 10px 10px;
 }
